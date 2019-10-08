@@ -55,7 +55,7 @@ class dbproject(dbbase):
 
     def create_wsgi_py_file(self):
         content = TEMPLATES.wsgi_py.format(self.name)
-        file = open(self.root_path() + "/wsgi.py", "w+")
+        file = open(self.project_path() + "/wsgi.py", "w+")
         file.write(content)
         file.close()
 
