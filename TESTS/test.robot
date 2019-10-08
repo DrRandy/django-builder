@@ -28,5 +28,6 @@ The project folder should contain the correct files
     File Should Exist   ${SUBDIR}/__init__.py
     File Should Exist   ${SUBDIR}/urls.py
     FIle Should Exist   ${SUBDIR}/settings.py
+    FIle Should Exist   ${SUBDIR}/wsgi.py
 
   

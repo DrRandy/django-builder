@@ -22,6 +22,7 @@ class dbproject(dbbase):
         self.create_init_py_file()
         self.create_settings_py_file()
         self.create_urls_py_file()
+        self.create_wsgi_py_file()
 
     def create_project_directory(self):
         os.mkdir(self.root_path())
@@ -41,13 +42,20 @@ class dbproject(dbbase):
         file.close()
 
     def create_urls_py_file(self):
+        content = TEMPLATES.urls_py
         file = open(self.project_path() + "/urls.py", "w+")
-        file.write("nothing goes here")
+        file.write(content)
         file.close()
 
     def create_settings_py_file(self):
         content = self.name.join(TEMPLATES.settings_py.split('{name}'))
         file = open(self.project_path() + "/settings.py", "w+")
+        file.write(content)
+        file.close()
+
+    def create_wsgi_py_file(self):
+        content = TEMPLATES.wsgi_py.format(self.name)
+        file = open(self.project_path() + "/wsgi.py", "w+")
         file.write(content)
         file.close()
 
