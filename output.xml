@@ -1,0 +1,94 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<robot rpa="false" generated="20191008 03:50:43.745" generator="Robot 3.1.2 (Python 3.5.1 on linux)">
+<suite source="/projects/environment/home/django-builder/TESTS/test.robot" id="s1" name="Test">
+<test id="s1-t1" name="Path to project folder should be correct">
+<kw name="Directory Should Exist" library="OperatingSystem">
+<doc>Fails unless the given path points to an existing directory.</doc>
+<arguments>
+<arg>${ROOT}</arg>
+</arguments>
+<msg level="INFO" timestamp="20191008 03:50:43.789" html="yes">Directory '&lt;a href="file:///projects/environment/home/django-builder"&gt;/projects/environment/home/django-builder&lt;/a&gt;' exists.</msg>
+<status starttime="20191008 03:50:43.789" status="PASS" endtime="20191008 03:50:43.789"></status>
+</kw>
+<status starttime="20191008 03:50:43.788" critical="yes" status="PASS" endtime="20191008 03:50:43.789"></status>
+</test>
+<test id="s1-t2" name="Building a project creates a project folder">
+<kw name="Directory Should Exist" library="OperatingSystem">
+<doc>Fails unless the given path points to an existing directory.</doc>
+<arguments>
+<arg>${DIR}</arg>
+</arguments>
+<msg level="INFO" timestamp="20191008 03:50:43.791" html="yes">Directory '&lt;a href="file:///projects/environment/home/django-builder/OUTPUT/mysite"&gt;/projects/environment/home/django-builder/OUTPUT/mysite&lt;/a&gt;' exists.</msg>
+<status starttime="20191008 03:50:43.790" status="PASS" endtime="20191008 03:50:43.791"></status>
+</kw>
+<kw name="Directory Should Not Be Empty" library="OperatingSystem">
+<doc>Fails if the specified directory is empty.</doc>
+<arguments>
+<arg>${DIR}</arg>
+</arguments>
+<msg level="INFO" timestamp="20191008 03:50:43.791" html="yes">Listing contents of directory '&lt;a href="file:///projects/environment/home/django-builder/OUTPUT/mysite"&gt;/projects/environment/home/django-builder/OUTPUT/mysite&lt;/a&gt;'.</msg>
+<msg level="INFO" timestamp="20191008 03:50:43.791" html="yes">Directory '&lt;a href="file:///projects/environment/home/django-builder/OUTPUT/mysite"&gt;/projects/environment/home/django-builder/OUTPUT/mysite&lt;/a&gt;' contains 2 items.</msg>
+<status starttime="20191008 03:50:43.791" status="PASS" endtime="20191008 03:50:43.791"></status>
+</kw>
+<kw name="Directory Should Exist" library="OperatingSystem">
+<doc>Fails unless the given path points to an existing directory.</doc>
+<arguments>
+<arg>${DIR}/${PROJECT_NAME}</arg>
+</arguments>
+<msg level="INFO" timestamp="20191008 03:50:43.792" html="yes">Directory '&lt;a href="file:///projects/environment/home/django-builder/OUTPUT/mysite/mysite"&gt;/projects/environment/home/django-builder/OUTPUT/mysite/mysite&lt;/a&gt;' exists.</msg>
+<status starttime="20191008 03:50:43.792" status="PASS" endtime="20191008 03:50:43.792"></status>
+</kw>
+<status starttime="20191008 03:50:43.790" critical="yes" status="PASS" endtime="20191008 03:50:43.792"></status>
+</test>
+<test id="s1-t3" name="The project folder should contain the correct files">
+<kw name="File Should Exist" library="OperatingSystem">
+<doc>Fails unless the given ``path`` points to an existing file.</doc>
+<arguments>
+<arg>${DIR}/manage.py</arg>
+</arguments>
+<msg level="INFO" timestamp="20191008 03:50:43.793" html="yes">File '&lt;a href="file:///projects/environment/home/django-builder/OUTPUT/mysite/manage.py"&gt;/projects/environment/home/django-builder/OUTPUT/mysite/manage.py&lt;/a&gt;' exists.</msg>
+<status starttime="20191008 03:50:43.793" status="PASS" endtime="20191008 03:50:43.793"></status>
+</kw>
+<kw name="File Should Exist" library="OperatingSystem">
+<doc>Fails unless the given ``path`` points to an existing file.</doc>
+<arguments>
+<arg>${SUBDIR}/__init__.py</arg>
+</arguments>
+<msg level="INFO" timestamp="20191008 03:50:43.794" html="yes">File '&lt;a href="file:///projects/environment/home/django-builder/OUTPUT/mysite/mysite/__init__.py"&gt;/projects/environment/home/django-builder/OUTPUT/mysite/mysite/__init__.py&lt;/a&gt;' exists.</msg>
+<status starttime="20191008 03:50:43.794" status="PASS" endtime="20191008 03:50:43.794"></status>
+</kw>
+<kw name="File Should Exist" library="OperatingSystem">
+<doc>Fails unless the given ``path`` points to an existing file.</doc>
+<arguments>
+<arg>${SUBDIR}/urls.py</arg>
+</arguments>
+<msg level="INFO" timestamp="20191008 03:50:43.795" html="yes">File '&lt;a href="file:///projects/environment/home/django-builder/OUTPUT/mysite/mysite/urls.py"&gt;/projects/environment/home/django-builder/OUTPUT/mysite/mysite/urls.py&lt;/a&gt;' exists.</msg>
+<status starttime="20191008 03:50:43.794" status="PASS" endtime="20191008 03:50:43.795"></status>
+</kw>
+<kw name="File Should Exist" library="OperatingSystem">
+<doc>Fails unless the given ``path`` points to an existing file.</doc>
+<arguments>
+<arg>${SUBDIR}/settings.py</arg>
+</arguments>
+<msg level="INFO" timestamp="20191008 03:50:43.795" html="yes">File '&lt;a href="file:///projects/environment/home/django-builder/OUTPUT/mysite/mysite/settings.py"&gt;/projects/environment/home/django-builder/OUTPUT/mysite/mysite/settings.py&lt;/a&gt;' exists.</msg>
+<status starttime="20191008 03:50:43.795" status="PASS" endtime="20191008 03:50:43.795"></status>
+</kw>
+<status starttime="20191008 03:50:43.793" critical="yes" status="PASS" endtime="20191008 03:50:43.796"></status>
+</test>
+<doc>Django Builder Robot Tests</doc>
+<status starttime="20191008 03:50:43.746" status="PASS" endtime="20191008 03:50:43.796"></status>
+</suite>
+<statistics>
+<total>
+<stat pass="3" fail="0">Critical Tests</stat>
+<stat pass="3" fail="0">All Tests</stat>
+</total>
+<tag>
+</tag>
+<suite>
+<stat pass="3" fail="0" id="s1" name="Test">Test</stat>
+</suite>
+</statistics>
+<errors>
+</errors>
+</robot>
